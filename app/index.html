@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="materialApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Julius ES2015 Material</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="description" content="An app to implement algorithms using es2015 & typescript">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic">
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="./assets/app.css">
+
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+
+<body ng-cloak  ng-controller="mainCtrl as vm">
+
+<!----------------------------------->
+<!------- AngularJS app entry ------->
+<h1>Ello World ^_^/</h1>
+<h4>{{ vm.message }}</h4>
+
+
+<!-- JavaScript Frameworks & Libraries -->
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/angular/angular.js"></script>
+<script src="./bower_components/angular-animate/angular-animate.js"></script>
+<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="./bower_components/angular-material/angular-material.js"></script>
+
+
+<!-- Custom JavaScript -->
+<script src="./dist/models.js"></script>
+<script src="./dist/services/userService.js"></script>
+<script src="./dist/controllers/mainCtrl.js"></script>
+<script src="./dist/boot.js"></script>
+
+</body>
+</html>
