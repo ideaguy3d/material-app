@@ -1,0 +1,22 @@
+{
+  "name": "material-app",
+  "description": "julius3d.com material app",
+  "main": "index.js",
+  "authors": [
+    "Julius Alvarado"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "javascript"
+  ],
+  "homepage": "https://github.com/ideaguy3d/app-julius3d",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.1.1"
+  }
+}

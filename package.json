@@ -1,0 +1,17 @@
+{
+  "name": "material-app",
+  "version": "0.0.1",
+  "description": "julius3d.com material app",
+  "main": "index.js",
+  "dependencies": {
+
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Julius Alvarado",
+  "license": "MIT"
+}
