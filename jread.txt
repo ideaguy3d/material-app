@@ -1,0 +1,7 @@
+There are 3 projects I am working on in this material-app directory:
+
+1) The main Material app itself in "app"
+
+2) a practical sort of "pure" typescript project
+
+3) and a React project that will be a simple game

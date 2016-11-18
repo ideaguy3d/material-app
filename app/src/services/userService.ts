@@ -17,7 +17,8 @@ module ContactManagerApp {
 
         selectedUser: User = null;
 
-        //This service is simply to simulate loading users from a server.
+        /*
+        //This service is simply to simulate loading users from a server.*/
         loadAllUsers(): ng.IPromise<User[]> {
             return this.$q.when(this.users);
         }
@@ -57,7 +58,6 @@ module ContactManagerApp {
             }
         ];
     }
-
 }
 
 

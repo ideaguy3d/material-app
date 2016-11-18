@@ -7,9 +7,12 @@
 module ContactManagerApp {
     export class MainCtrl {
         //this is for when I minify the code
-        static $inject = ['userService'];
+        static $inject = ['userService', '$mdSidenav'];
 
-        constructor(private userService: IUserService) {
+        constructor(
+            private userService: IUserService,
+            private $mdSidenav: angular.material.ISidenavService)
+        {
             var self = this;
             this.userService.loadAllUsers()
                 .then((users: User[]) => {
@@ -20,6 +23,10 @@ module ContactManagerApp {
 
         users: User[] = [];
         message: string = "Ello Good Sir.";
+
+        toggleSideNav(): void {
+            this.$mdSidenav('left').toggle();
+        }
     }
 }
 

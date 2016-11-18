@@ -42,7 +42,8 @@ var ContactManagerApp;
                 }
             ];
         }
-        //This service is simply to simulate loading users from a server.
+        /*
+        //This service is simply to simulate loading users from a server.*/
         UserService.prototype.loadAllUsers = function () {
             return this.$q.when(this.users);
         };

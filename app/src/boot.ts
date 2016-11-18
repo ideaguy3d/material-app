@@ -5,9 +5,18 @@
 ///<reference path="_all.ts"/>
 
 module ContactManagerApp {
-    angular.module("materialApp", ['ngMaterial'])
+    angular.module("materialApp", ['ngMaterial',
+        'ngMdIcons'])
         .service('userService', UserService)
-        .controller("mainCtrl", MainCtrl);
+        .controller("mainCtrl", MainCtrl)
+        .config(($mdIconProvider: angular.material.IIconProvider,
+        $mdThemingProvider: angular.material.IThemingProvider) =>
+        {
+            $mdIconProvider.icon('mene', './assets/svg/menu.svg', 24);
+            $mdThemingProvider.theme('default')
+                .primaryPalette('blue')
+                .accentPalette('red');
+        });
 }
 
 //\\
