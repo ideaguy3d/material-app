@@ -12,11 +12,14 @@ module ContactManagerApp {
         .config(($mdIconProvider: angular.material.IIconProvider,
         $mdThemingProvider: angular.material.IThemingProvider) =>
         {
-            $mdIconProvider.icon('mene', './assets/svg/menu.svg', 24);
+            $mdIconProvider
+                .defaultIconSet('./assets/svg/avatars.svg', 256)
+                .icon('menu', './assets/svg/menu.svg', 24);
             $mdThemingProvider.theme('default')
                 .primaryPalette('blue')
                 .accentPalette('red');
         });
 }
+
 
 //\\
