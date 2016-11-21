@@ -24,8 +24,8 @@
 <!-- layout is vert to make sure it streches out vertically -->
 <div ng-include="'dist/view/sidenav.html'" layout="vertical"></div>
 
-
-<div layout="column" flex>
+<!-- This is the parent wrapper for all of the content -->
+<div layout="column" flex id="wrapper">
     <div ng-include="'dist/view/toolbar-header.html'"></div>
     <md-content flex id="content">
         <div ng-include="'dist/view/main-content.html'"></div>
@@ -58,6 +58,8 @@
 <!--------------------------------------->
 <script src="./dist/models.js"></script>
 <script src="./dist/services/userService.js"></script>
+<script src="./dist/controllers/addUserDialogCtrl.js"></script>
+<script src="./dist/controllers/contactPanelCtrl.js"></script>
 <script src="./dist/controllers/mainCtrl.js"></script>
 <script src="./dist/boot.js"></script>
 
