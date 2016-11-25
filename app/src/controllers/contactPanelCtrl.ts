@@ -21,7 +21,7 @@ module ContactManagerApp {
             {name: 'Twitter', icon:'twitter'},
             {name: 'Google+', icon:'google_plus'},
             {name: 'Hangout', icon:'hangouts'}
-        ]
+        ];
 
         submitContact(action): void {
             this.$mdBottomSheet.hide(action);

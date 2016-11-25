@@ -7,12 +7,14 @@ var ContactManagerApp;
     var AddUserDialogCtrl = (function () {
         function AddUserDialogCtrl($mdDialog) {
             this.$mdDialog = $mdDialog;
+            this.avatars = ['svg-1', 'svg-2', 'svg-3', 'svg-4', 'svg-5'];
         }
         AddUserDialogCtrl.prototype.cancel = function () {
             this.$mdDialog.cancel();
         };
         AddUserDialogCtrl.prototype.save = function () {
-            this.$mdDialog.hide(new ContactManagerApp.User("placeholder", "", "", []));
+            // pass our CreateUser model back to our MainCtrl
+            this.$mdDialog.hide(this.user);
         };
         AddUserDialogCtrl.$inject = ['$mdDialog'];
         return AddUserDialogCtrl;

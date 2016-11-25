@@ -7,6 +7,8 @@
 module ContactManagerApp {
     export class  AddUserDialogCtrl {
         static $inject = ['$mdDialog'];
+        user: CreateUser;
+        avatars = ['svg-1','svg-2','svg-3','svg-4','svg-5'];
 
         constructor(private $mdDialog){}
 
@@ -14,7 +16,8 @@ module ContactManagerApp {
             this.$mdDialog.cancel();
         }
         save(): void {
-            this.$mdDialog.hide(new User("placeholder","","",[]));
+            // pass our CreateUser model back to our MainCtrl
+            this.$mdDialog.hide(this.user);
         }
     }
 }

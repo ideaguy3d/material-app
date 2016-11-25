@@ -16,7 +16,7 @@ var ContactManagerApp;
             this.searchText = "";
             this.users = [];
             this.selected = null;
-            this.message = "Ello Good Sir or Ma'am ^_^/";
+            this.newNote = new ContactManagerApp.Note('', null);
             //simulate pulling user data from a backend.
             var self = this;
             this.userService.loadAllUsers()
@@ -68,7 +68,10 @@ var ContactManagerApp;
                 clickOutsideToClose: true,
                 fullscreen: useFullScreen
             }).then(function (user) {
-                self.openToast("User Added ^_^/");
+                var newUser = ContactManagerApp.User.fromCreate(user);
+                self.users.push(newUser);
+                self.selectUser(newUser);
+                self.openToast("User Added \\^_^/");
             }, function () {
                 console.log("You pressed cancel.");
             });
@@ -84,6 +87,12 @@ var ContactManagerApp;
                 self.selected.notes = [];
                 self.openToast('Cleared notes');
             });
+        };
+        MainCtrl.prototype.addNote = function () {
+            this.selected.notes.push(this.newNote);
+            //reset the form with a new model
+            this.newNote = new ContactManagerApp.Note('', null);
+            this.openToast("Note added.");
         };
         MainCtrl.prototype.removeNote = function (note) {
             var foundIndex = this.selected.notes.indexOf(note);
