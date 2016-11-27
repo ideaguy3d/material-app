@@ -6,7 +6,7 @@
 
 module ContactManagerApp {
     angular.module("materialApp", ['ngMaterial',
-        'ngMdIcons'])
+        'ngMdIcons', 'ngMessages'])
         .service('userService', UserService)
         .controller("mainCtrl", MainCtrl)
         .config(($mdIconProvider: angular.material.IIconProvider,
