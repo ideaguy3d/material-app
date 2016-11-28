@@ -7,15 +7,15 @@ class Quarter {
     private valGetTrack: number = 0;
 
     get Value() {
-        this.valGetTrack++;  
+        this.valGetTrack++;
         return this.value;
     }
 
     /*
      set Value(newNum: number) {
-     this.value = newNum;
+        this.value = newNum;
      }
-    */
+     */
 
 
     public static getImageUrl(): string {
