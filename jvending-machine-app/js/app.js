@@ -1,36 +1,138 @@
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 /**
  * Created by julius alvarado on 11/14/2016.
  */
-var Quarter = (function () {
-    function Quarter() {
-        this.value = .25;
-        this.valGetTrack = 0;
-    }
-    Object.defineProperty(Quarter.prototype, "Value", {
-        get: function () {
-            this.valGetTrack++;
-            return this.value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /*
-     set Value(newNum: number) {
-        this.value = newNum;
-     }
-     */
-    Quarter.getImageUrl = function () {
-        return "img/Quarter.png";
-    };
-    return Quarter;
-}());
-var coin = new Quarter();
-var zamount = coin.Value;
+var Coins;
+(function (Coins) {
+    //this will only be available in the Coins namespace.
+    var imagePath = "img/";
+    var Coin = (function () {
+        function Coin(value) {
+            this.value = value;
+        }
+        return Coin;
+    }());
+    Coins.Coin = Coin;
+    var Quarter = (function (_super) {
+        __extends(Quarter, _super);
+        function Quarter() {
+            _super.call(this, .25);
+        }
+        /*
+         set Value(newNum: number) {
+         this.value = newNum;
+         }
+         */
+        Quarter.prototype.getImageUrl = function () {
+            return imagePath + "Quarter.png";
+        };
+        return Quarter;
+    }(Coin));
+    Coins.Quarter = Quarter;
+    var Dime = (function (_super) {
+        __extends(Dime, _super);
+        function Dime() {
+            _super.call(this, .10);
+        }
+        Dime.prototype.getImageUrl = function () {
+            return imagePath + "Dime.png";
+        };
+        return Dime;
+    }(Coin));
+    Coins.Dime = Dime;
+    var Half = (function (_super) {
+        __extends(Half, _super);
+        function Half() {
+            _super.call(this, .5);
+        }
+        Half.prototype.getImageUrl = function () {
+            return imagePath + "Half.png";
+        };
+        return Half;
+    }(Coin));
+    Coins.Half = Half;
+    var Dollar = (function (_super) {
+        __extends(Dollar, _super);
+        function Dollar() {
+            _super.call(this, 1);
+        }
+        Dollar.prototype.getImageUrl = function () {
+            return imagePath + "Dollar.png";
+        };
+        return Dollar;
+    }(Coin));
+    Coins.Dollar = Dollar;
+})(Coins || (Coins = {}));
 //\\ 
 /**
  * Created by Julius Alvarado on 11/27/2016.
  */
-///<reference path="./coin.ts"/>
+var ProductCategory = (function () {
+    function ProductCategory() {
+        this.imgPath = "img/";
+    }
+    return ProductCategory;
+}());
+var SodaCategory = (function (_super) {
+    __extends(SodaCategory, _super);
+    function SodaCategory() {
+        _super.apply(this, arguments);
+        this.name = "Soda";
+    }
+    SodaCategory.prototype.getImageUrl = function () {
+        return this.imgPath + "SodaCan.png";
+    };
+    return SodaCategory;
+}(ProductCategory));
+var ChipsCategory = (function (_super) {
+    __extends(ChipsCategory, _super);
+    function ChipsCategory() {
+        _super.apply(this, arguments);
+        this.name = "Chip";
+    }
+    ChipsCategory.prototype.getImageUrl = function () {
+        return this.imgPath + "Chips.png";
+    };
+    return ChipsCategory;
+}(ProductCategory));
+var CandyCategory = (function (_super) {
+    __extends(CandyCategory, _super);
+    function CandyCategory() {
+        _super.apply(this, arguments);
+        this.name = "Candy";
+    }
+    CandyCategory.prototype.getImageUrl = function () {
+        return this.imgPath + "Candy.png";
+    };
+    return CandyCategory;
+}(ProductCategory));
+var CandyBarCategory = (function (_super) {
+    __extends(CandyBarCategory, _super);
+    function CandyBarCategory() {
+        _super.apply(this, arguments);
+        this.name = "Candy Bar";
+    }
+    CandyBarCategory.prototype.getImageUrl = function () {
+        return this.imgPath + "CandyBar.png";
+    };
+    return CandyBarCategory;
+}(ProductCategory));
+//\\ 
+/**
+ * Created by Julius Alvarado on 11/27/2016.
+ */
+///<reference path="productCategory.ts"/>
+var Initial = (function () {
+    function Initial() {
+        this.name = "Please select a product";
+        this.price = 0;
+    }
+    return Initial;
+}());
 //this is pretty much just a model
 var CocaCola = (function () {
     function CocaCola() {
@@ -39,6 +141,30 @@ var CocaCola = (function () {
         this.category = new SodaCategory();
     }
     return CocaCola;
+}());
+var Gummies = (function () {
+    function Gummies() {
+        this.name = "Gummies";
+        this.price = 1.75;
+        this.category = new CandyCategory();
+    }
+    return Gummies;
+}());
+var Hersey = (function () {
+    function Hersey() {
+        this.name = "Hersey";
+        this.price = 1.40;
+        this.category = new CandyBarCategory();
+    }
+    return Hersey;
+}());
+var Milkyway = (function () {
+    function Milkyway() {
+        this.name = "Milkyway";
+        this.price = .99;
+        this.category = new CandyBarCategory();
+    }
+    return Milkyway;
 }());
 //\\ 
 /**
@@ -49,7 +175,19 @@ var productFactory = (function () {
     function productFactory() {
     }
     productFactory.GetProduct = function () {
-        return new CocaCola();
+        var random = Math.floor(Math.random() * 11);
+        switch (random) {
+            case 0: return new CocaCola();
+            case 1: return new Fanta();
+            case 2: return new Sprite();
+            case 3: return new Peanuts();
+            case 4: return new Cashews();
+            case 5: return new Plain();
+            case 6: return new Cheddar();
+            case 8: return new Gummies();
+            case 9: return new Hersey();
+            case 10: return new Milkyway();
+        }
     };
     return productFactory;
 }());
@@ -79,9 +217,9 @@ var VendingMachine = (function () {
     function VendingMachine() {
         var _this = this;
         this.paid = ko.observable(0); //this is how ko binds
-        this.selectedCell = ko.observable(new Cell(new CocaCola()));
+        this.selectedCell = ko.observable(new Cell(new Initial()));
         this.cells = ko.observableArray([]);
-        this.acceptedCoins = [new Quarter()];
+        this.acceptedCoins = [new Dime(), new Quarter(), new Half(), new Dollar()];
         this.canPay = ko.pureComputed(function () { return _this.paid() - _this.selectedCell().product.price >= 0; });
         this.select = function (cell) {
             //ko observable
@@ -101,6 +239,9 @@ var VendingMachine = (function () {
                 alert("Sold out !");
                 return;
             }
+            var currentPaid = _this.paid();
+            _this.paid(Math.round(((currentPaid - _this.selectedCell().product.price) * 100)) / 100);
+            var currentStock = _this.selectedCell().stock();
         };
     }
     Object.defineProperty(VendingMachine.prototype, "size", {
@@ -124,18 +265,5 @@ var VendingMachine = (function () {
 var machine = new VendingMachine();
 machine.size = VendingMachineSize.medium;
 ko.applyBindings(machine);
-//\\ 
-/**
- * Created by Julius Alvarado on 11/27/2016.
- */
-var SodaCategory = (function () {
-    function SodaCategory() {
-        this.name = "Soda";
-    }
-    SodaCategory.prototype.getImageUrl = function () {
-        return "img/SodaCan.png";
-    };
-    return SodaCategory;
-}());
 //\\ 
 //# sourceMappingURL=app.js.map
