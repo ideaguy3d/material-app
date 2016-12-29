@@ -17,7 +17,7 @@ class SodaCategory extends ProductCategory {
 
 class ChipsCategory extends ProductCategory {
     name = "Chip";
-    getImageUrl(){
+    getImageUrl() {
         return this.imgPath + "Chips.png";
     }
 }

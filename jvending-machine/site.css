@@ -11,6 +11,7 @@ body {
 .cell {
     height: 110px;
     margin-bottom: 20px;
+    display: inline-block;
 }
 
 .cell:hover {
@@ -45,5 +46,7 @@ body {
 }
 
 @keyframes drop {
-    99% { transform: translateY(600px) rotate(120deg); }
+    99% {
+        transform: translateY(600px) rotate(120deg);
+    }
 }

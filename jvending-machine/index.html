@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="site.css">
+</head>
+
+
+<body>
+
+<div class="container">
+	<h1>Julius Alvarado Vending machine simulation</h1>
+	<section class="row">
+		<!-- Left Side -->
+		<div class="col-md-8 machine" data-bind="foreach: cells">
+			<div class="cell"
+			     data-bind="click: $parent.select, css: {selected: $parent.selectedCell().product === $data.product, sold: sold}">
+				
+				<div class="image">
+					<img data-bind="attr: {src: product.category.getImageUrl(), alt: product.category.name}">
+				</div>
+				
+				<div class="productInfo">
+					<h2 data-bind="text: product.name"></h2>
+					<span data-bind="text: stock"></span><span> in stock</span>
+					<h3 data-bind="text: '$ '+product.price"></h3>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Right Side -->
+		<div class="col-md-4">
+			<h4 class="page-header">
+				Paid: $<span id="total" data-bind="text: paid"></span>
+			</h4>
+			
+			<div data-bind="foreach: acceptedCoins">
+				<img data-bind="attr: { src: getImageUrl(), alt: value}, click: $parent.acceptCoin">
+			</div>
+			
+			<div>
+				<h3 data-bind="with: selectedCell">
+					<span data-bind="text: product.name"></span>
+					$<span data-bind="text: product.price"></span>
+				</h3>
+			</div>
+			
+			<button data-bind="enable: canPay, click: pay"
+					class="btn btn-danger">
+				Pay
+			</button>
+		</div>
+	</section>
+</div>
+
+
+<script src="js/lib/knockout.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

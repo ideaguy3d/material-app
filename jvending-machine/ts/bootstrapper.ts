@@ -3,8 +3,9 @@
  */
 
 /// <reference path="vendingMachine.ts" />
+
 let machine = new VendingMachine();
-machine.size = VendingMachineSize.medium;
+machine.size = VendingMachineSize.large;
 ko.applyBindings(machine);
 
 

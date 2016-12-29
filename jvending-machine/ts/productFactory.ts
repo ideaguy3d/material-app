@@ -6,7 +6,7 @@
 
 class productFactory {
     static GetProduct(): Product {
-        let random = Math.floor(Math.random() * 11);
+        let random = Math.floor(Math.random() * 10);
         switch (random) {
             case 0: return new CocaCola();
             case 1: return new Fanta();
@@ -15,9 +15,9 @@ class productFactory {
             case 4: return new Cashews();
             case 5: return new Plain();
             case 6: return new Cheddar();
-            case 8: return new Gummies();
-            case 9: return new Hersey();
-            case 10: return new Milkyway();
+            case 7: return new Gummies();
+            case 8: return new Hersey();
+            case 9: return new Milkyway();
         }
     }
 }

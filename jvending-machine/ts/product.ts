@@ -22,6 +22,43 @@ class CocaCola implements Product {
     category = new SodaCategory();
 }
 
+class Fanta implements  Product {
+    name: string = "Fanta";
+    price: number = 1.90;
+    category = new SodaCategory();
+}
+
+class Sprite implements Product {
+    name: string = "Sprite";
+    price: number = 1.5;
+    category = new SodaCategory();
+}
+
+class Peanuts implements Product {
+    name: string = "Peanuts";
+    price: number = 1.10;
+    category = new ChipsCategory();
+}
+
+class Cashews implements Product {
+    name: string = "Cashews";
+    price: number = 1.40;
+    category = new ChipsCategory();
+}
+
+class Plain implements Product {
+    name: string = "Plain";
+    price: number = 2.20;
+    category = new CandyBarCategory();
+}
+
+class Cheddar implements Product {
+    name: string = "Cheddar";
+    price: number = 2.9;
+    category = new ChipsCategory();
+}
+
+
 class Gummies implements Product {
     name: string = "Gummies";
     price: number = 1.75;

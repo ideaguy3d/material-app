@@ -4,7 +4,7 @@
   "description": "julius3d.com material app",
   "main": "index.js",
   "dependencies": {
-
+    "angular-ui-router": "^0.3.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
