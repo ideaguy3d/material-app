@@ -25,7 +25,7 @@ class Cell {
 // this is like a controller
 class VendingMachine {
     paid = ko.observable(0); //this is how ko binds, then sets an initial value of 0.
-    selectedCell = ko.observable(new Cell(new Initial()));
+    selectedCell = ko.observable( new Cell(new Initial()) );
     cells = ko.observableArray([]);
     acceptedCoins: Array<Coins.Coin> = [new Coins.Dime(), new Coins.Quarter(), new Coins.Half(), new Coins.Dollar()];
     canPay = ko.pureComputed(() =>

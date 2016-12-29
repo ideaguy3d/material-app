@@ -4,9 +4,10 @@
 
 ///<reference path="_all.ts"/>
 
+// materialApp is created here
 module ContactManagerApp {
-    angular.module("materialApp", ['ngMaterial',
-        'ngMdIcons', 'ngMessages'])
+    // import JuliusSkillsCtrl = JuliusSkillsApp.JuliusSkillsCtrl;
+    angular.module("materialApp", ['ngMaterial', 'ngMdIcons', 'ngMessages'])
         .service('userService', UserService)
         .controller("mainCtrl", MainCtrl)
         .config(($mdIconProvider: angular.material.IIconProvider,
@@ -39,7 +40,11 @@ module ContactManagerApp {
             //
             //use ".definePalette({});" for complete customization
         });
-}
+} // END OF: module ContactManagerApp {}
 
+module JuliusSkillsApp {
+    angular.module('materialApp')
+        .controller('juliusSkillsCtrl', JuliusSkillsCtrl);
+}
 
 //\\

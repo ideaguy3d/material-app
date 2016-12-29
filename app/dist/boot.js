@@ -2,10 +2,11 @@
  * Created by Julius Alvarado on 11/16/2016.
  */
 ///<reference path="_all.ts"/>
+// materialApp is created here
 var ContactManagerApp;
 (function (ContactManagerApp) {
-    angular.module("materialApp", ['ngMaterial',
-        'ngMdIcons', 'ngMessages'])
+    // import JuliusSkillsCtrl = JuliusSkillsApp.JuliusSkillsCtrl;
+    angular.module("materialApp", ['ngMaterial', 'ngMdIcons', 'ngMessages'])
         .service('userService', ContactManagerApp.UserService)
         .controller("mainCtrl", ContactManagerApp.MainCtrl)
         .config(function ($mdIconProvider, $mdThemingProvider) {
@@ -34,6 +35,11 @@ var ContactManagerApp;
         //
         //use ".definePalette({});" for complete customization
     });
-})(ContactManagerApp || (ContactManagerApp = {}));
+})(ContactManagerApp || (ContactManagerApp = {})); // END OF: module ContactManagerApp {}
+var JuliusSkillsApp;
+(function (JuliusSkillsApp) {
+    angular.module('materialApp')
+        .controller('juliusSkillsCtrl', JuliusSkillsApp.JuliusSkillsCtrl);
+})(JuliusSkillsApp || (JuliusSkillsApp = {}));
 //\\ 
 //# sourceMappingURL=boot.js.map
