@@ -18,7 +18,8 @@ module  JuliusSkillsApp {
     export class JuliusSkillsCtrl {
         public sideTitle: string = "Skills Match Matrix";
         public skillLevelWanted: number = 2;
-        public selectedSkillCell = new SkillCell(new SkillJavascript());
+        public defaultSkill: SkillJavascript = new SkillJavascript('ello world');
+        public selectedSkillCell = new SkillCell(this.defaultSkill);
         public skillsArray: string[] = ['CSS / CSS3', 'HTML / HTML5', 'User Interface Development',
             'AngularJS', 'TypeScript', 'CSS3 Animations', 'Data Modeling'
         ];

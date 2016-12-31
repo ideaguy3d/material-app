@@ -19,7 +19,8 @@ var JuliusSkillsApp;
         function JuliusSkillsCtrl() {
             this.sideTitle = "Skills Match Matrix";
             this.skillLevelWanted = 2;
-            this.selectedSkillCell = new SkillCell(new JuliusSkillsApp.SkillJavascript());
+            this.defaultSkill = new JuliusSkillsApp.SkillJavascript('ello world');
+            this.selectedSkillCell = new SkillCell(this.defaultSkill);
             this.skillsArray = ['CSS / CSS3', 'HTML / HTML5', 'User Interface Development',
                 'AngularJS', 'TypeScript', 'CSS3 Animations', 'Data Modeling'
             ];

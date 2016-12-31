@@ -24,10 +24,12 @@ var JuliusSkillsApp;
     JuliusSkillsApp.jCss = jCss;
     //
     var SkillJavascript = (function () {
-        function SkillJavascript() {
+        function SkillJavascript(jKey) {
+            this.jKey = jKey;
             this.skillName = "JavaScript";
             this.skillLevel = 2;
             this.skillType = new JuliusSkillsApp.FrontEndSkillType();
+            this.jKey = jKey;
             console.log("jJavascript class constructor called.");
         }
         return SkillJavascript;

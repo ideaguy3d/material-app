@@ -27,7 +27,8 @@ module JuliusSkillsApp {
 
     //
     export class SkillJavascript implements Skills {
-        constructor(){
+        constructor(public jKey: string){
+            this.jKey = jKey;
             console.log("jJavascript class constructor called.");
         }
         skillName: string = "JavaScript";
