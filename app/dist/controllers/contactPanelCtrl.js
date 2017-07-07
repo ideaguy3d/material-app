@@ -19,9 +19,9 @@ var ContactManagerApp;
         ContactPanelCtrl.prototype.submitContact = function (action) {
             this.$mdBottomSheet.hide(action);
         };
-        ContactPanelCtrl.$inject = ['userService', '$mdBottomSheet'];
         return ContactPanelCtrl;
     }());
+    ContactPanelCtrl.$inject = ['userService', '$mdBottomSheet'];
     ContactManagerApp.ContactPanelCtrl = ContactPanelCtrl;
 })(ContactManagerApp || (ContactManagerApp = {}));
 //\\ 

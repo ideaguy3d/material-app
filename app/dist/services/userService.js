@@ -50,9 +50,9 @@ var ContactManagerApp;
         UserService.prototype.loadAllUsers = function () {
             return this.$q.when(this.users);
         };
-        UserService.$inject = ['$q'];
         return UserService;
     }());
+    UserService.$inject = ['$q'];
     ContactManagerApp.UserService = UserService;
 })(ContactManagerApp || (ContactManagerApp = {}));
 //\\ 

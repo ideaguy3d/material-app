@@ -1,8 +1,13 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /**
  * Created by julius alvarado on 11/14/2016.
  */
@@ -20,9 +25,10 @@ var Coins;
     var Quarter = (function (_super) {
         __extends(Quarter, _super);
         function Quarter() {
-            _super.call(this, .25);
-            this.logos = "US Quarter";
-            this.otherLogos = "other logo";
+            var _this = _super.call(this, .25) || this;
+            _this.logos = "US Quarter";
+            _this.otherLogos = "other logo";
+            return _this;
         }
         Object.defineProperty(Quarter.prototype, "Value", {
             /* */
@@ -60,7 +66,7 @@ var Coins;
     var Dime = (function (_super) {
         __extends(Dime, _super);
         function Dime() {
-            _super.call(this, .10);
+            return _super.call(this, .10) || this;
         }
         Dime.prototype.getImageUrl = function () {
             return imagePath + "Dime.png";
@@ -71,7 +77,7 @@ var Coins;
     var Half = (function (_super) {
         __extends(Half, _super);
         function Half() {
-            _super.call(this, .5);
+            return _super.call(this, .5) || this;
         }
         Half.prototype.getImageUrl = function () {
             return imagePath + "Half.png";
@@ -82,7 +88,7 @@ var Coins;
     var Dollar = (function (_super) {
         __extends(Dollar, _super);
         function Dollar() {
-            _super.call(this, 1);
+            return _super.call(this, 1) || this;
         }
         Dollar.prototype.getImageUrl = function () {
             return imagePath + "Dollar.jpg";
@@ -104,8 +110,9 @@ var ProductCategory = (function () {
 var SodaCategory = (function (_super) {
     __extends(SodaCategory, _super);
     function SodaCategory() {
-        _super.apply(this, arguments);
-        this.name = "Soda";
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.name = "Soda";
+        return _this;
     }
     SodaCategory.prototype.getImageUrl = function () {
         return this.imgPath + "SodaCan.png";
@@ -115,8 +122,9 @@ var SodaCategory = (function (_super) {
 var ChipsCategory = (function (_super) {
     __extends(ChipsCategory, _super);
     function ChipsCategory() {
-        _super.apply(this, arguments);
-        this.name = "Chip";
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.name = "Chip";
+        return _this;
     }
     ChipsCategory.prototype.getImageUrl = function () {
         return this.imgPath + "Chips.png";
@@ -126,8 +134,9 @@ var ChipsCategory = (function (_super) {
 var CandyCategory = (function (_super) {
     __extends(CandyCategory, _super);
     function CandyCategory() {
-        _super.apply(this, arguments);
-        this.name = "Candy";
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.name = "Candy";
+        return _this;
     }
     CandyCategory.prototype.getImageUrl = function () {
         return this.imgPath + "Candy.png";
@@ -137,8 +146,9 @@ var CandyCategory = (function (_super) {
 var CandyBarCategory = (function (_super) {
     __extends(CandyBarCategory, _super);
     function CandyBarCategory() {
-        _super.apply(this, arguments);
-        this.name = "Candy Bar";
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.name = "Candy Bar";
+        return _this;
     }
     CandyBarCategory.prototype.getImageUrl = function () {
         return this.imgPath + "CandyBar.png";

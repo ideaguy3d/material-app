@@ -108,11 +108,11 @@ var ContactManagerApp;
             this.$mdToast.show(this.$mdToast.simple()
                 .textContent(message).position('top right').hideDelay(2500));
         };
-        //this is for when I minify the code
-        MainCtrl.$inject = ['userService', '$mdSidenav', '$mdToast', '$mdDialog',
-            '$mdMedia', '$mdBottomSheet'];
         return MainCtrl;
     }());
+    //this is for when I minify the code
+    MainCtrl.$inject = ['userService', '$mdSidenav', '$mdToast', '$mdDialog',
+        '$mdMedia', '$mdBottomSheet'];
     ContactManagerApp.MainCtrl = MainCtrl;
 })(ContactManagerApp || (ContactManagerApp = {}));
 //\\ 

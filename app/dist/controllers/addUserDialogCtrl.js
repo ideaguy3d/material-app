@@ -16,9 +16,9 @@ var ContactManagerApp;
             // pass our CreateUser model back to our MainCtrl
             this.$mdDialog.hide(this.user);
         };
-        AddUserDialogCtrl.$inject = ['$mdDialog'];
         return AddUserDialogCtrl;
     }());
+    AddUserDialogCtrl.$inject = ['$mdDialog'];
     ContactManagerApp.AddUserDialogCtrl = AddUserDialogCtrl;
 })(ContactManagerApp || (ContactManagerApp = {}));
 //\\ 
