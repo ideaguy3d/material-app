@@ -25,6 +25,7 @@ module ContactManagerApp {
 
         submitContact(action): void {
             this.$mdBottomSheet.hide(action);
+            console.log("the submitContact() was invoked ^_^");
         }
     }
 }

@@ -24,6 +24,7 @@ var JuliusSkillsApp;
     JuliusSkillsApp.jCss = jCss;
     //
     var SkillJavascript = (function () {
+        //
         function SkillJavascript(jKey) {
             this.jKey = jKey;
             this.skillName = "JavaScript";

@@ -27,10 +27,12 @@ module JuliusSkillsApp {
 
     //
     export class SkillJavascript implements Skills {
-        constructor(public jKey: string){
+        //
+        constructor(public jKey: string) {
             this.jKey = jKey;
             console.log("jJavascript class constructor called.");
         }
+
         skillName: string = "JavaScript";
         skillLevel: number = 2;
         skillType: FrontEndSkillType = new FrontEndSkillType();

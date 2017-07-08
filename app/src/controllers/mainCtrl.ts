@@ -16,8 +16,8 @@ module ContactManagerApp {
                     private $mdDialog: angular.material.IDialogService,
                     private $mdMedia: angular.material.IMedia,
                     private $mdBottomSheet: angular.material.IBottomSheetService) {
-            //simulate pulling user data from a backend.
-            var self = this;
+            // simulate pulling user data from a backend.
+            const self = this;
 
             this.userService.loadAllUsers()
                 .then((users: User[]) => {
@@ -44,11 +44,10 @@ module ContactManagerApp {
             this.userService.selectedUser = user;
 
             //'left' is the id of the ng side nav element
-            var sidenav = this.$mdSidenav('left');
+            const sidenav = this.$mdSidenav('left');
             if (sidenav.isOpen()) sidenav.close();
             this.tabIndex = 0;
         }
-
 
         showContactOptions($event) {
             this.$mdBottomSheet.show({
@@ -56,8 +55,7 @@ module ContactManagerApp {
                 templateUrl: './dist/view/contactSheet.html',
                 controller: ContactPanelCtrl,
                 controllerAs: "cp",
-                bindToController: true,
-                targetEvent: $event
+                bindToController: true
             }).then( (clickedItem) => {
                 //check that clickedItem is defined then log to the console
                 clickedItem && console.log(clickedItem.name + " click!");
@@ -65,7 +63,8 @@ module ContactManagerApp {
         }
 
         /*
-         * This is an extremely important method, this is where we introduce a new ctrl */
+         * This is an extremely important method, this is where we introduce a new ctrl
+         */
         addUser($event) {
             /* keep the reference to this view model since we are going to be
              * using callback functions */
@@ -120,7 +119,7 @@ module ContactManagerApp {
         }
 
         removeNote(note: Note): void {
-            var foundIndex = this.selected.notes.indexOf(note);
+            let foundIndex = this.selected.notes.indexOf(note);
             this.selected.notes.splice(foundIndex, 1);
             this.openToast("Note now removed...");
         }

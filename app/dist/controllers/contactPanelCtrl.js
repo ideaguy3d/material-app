@@ -18,6 +18,7 @@ var ContactManagerApp;
         }
         ContactPanelCtrl.prototype.submitContact = function (action) {
             this.$mdBottomSheet.hide(action);
+            console.log("the submitContact() was invoked ^_^");
         };
         return ContactPanelCtrl;
     }());

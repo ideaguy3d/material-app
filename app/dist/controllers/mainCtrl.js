@@ -17,7 +17,7 @@ var ContactManagerApp;
             this.users = [];
             this.selected = null;
             this.newNote = new ContactManagerApp.Note('', null);
-            //simulate pulling user data from a backend.
+            // simulate pulling user data from a backend.
             var self = this;
             this.userService.loadAllUsers()
                 .then(function (users) {
@@ -45,15 +45,15 @@ var ContactManagerApp;
                 templateUrl: './dist/view/contactSheet.html',
                 controller: ContactManagerApp.ContactPanelCtrl,
                 controllerAs: "cp",
-                bindToController: true,
-                targetEvent: $event
+                bindToController: true
             }).then(function (clickedItem) {
                 //check that clickedItem is defined then log to the console
                 clickedItem && console.log(clickedItem.name + " click!");
             });
         };
         /*
-         * This is an extremely important method, this is where we introduce a new ctrl */
+         * This is an extremely important method, this is where we introduce a new ctrl
+         */
         MainCtrl.prototype.addUser = function ($event) {
             /* keep the reference to this view model since we are going to be
              * using callback functions */
