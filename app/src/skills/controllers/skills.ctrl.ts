@@ -24,7 +24,6 @@ module  JuliusSkillsApp {
             'User Interface Development', 'AngularJS', 'TypeScript',
             'CSS3 Animations', 'Data Modeling'
         ];
-
     }
 }
 

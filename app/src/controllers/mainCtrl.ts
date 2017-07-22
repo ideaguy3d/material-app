@@ -56,16 +56,14 @@ module ContactManagerApp {
                 controller: ContactPanelCtrl,
                 controllerAs: "cp",
                 bindToController: true
-            }).then( (clickedItem) => {
+            }).then((clickedItem) => {
                 //check that clickedItem is defined then log to the console
                 clickedItem && console.log(clickedItem.name + " click!");
             });
         }
 
-        /*
-         * This is an extremely important method, this is where we introduce a new ctrl
-         */
-        addUser($event) {
+        /* This is an extremely important method, this is where we introduce a new ctrl */
+        addUser($event): void {
             /* keep the reference to this view model since we are going to be
              * using callback functions */
             var self = this;
@@ -78,14 +76,17 @@ module ContactManagerApp {
                 controllerAs: 'ctrl',
                 clickOutsideToClose: true,
                 fullscreen: useFullScreen
-            }).then((user: CreateUser) => {
-                var newUser: User = User.fromCreate(user);
-                self.users.push(newUser);
-                self.selectUser(newUser);
-                self.openToast("User Added \\^_^/")
-            }, () => {
-                console.log("You pressed cancel.");
-            });
+            })
+                .then((user: CreateUser) => {
+                        var newUser: User = User.fromCreate(user);
+                        self.users.push(newUser);
+                        self.selectUser(newUser);
+                        self.openToast("User Added \\^_^/")
+                    },
+                    () => {
+                        console.log("You pressed cancel.");
+                    }
+                );
         }
 
         clearNotes($event) {

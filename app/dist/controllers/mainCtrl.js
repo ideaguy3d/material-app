@@ -51,9 +51,7 @@ var ContactManagerApp;
                 clickedItem && console.log(clickedItem.name + " click!");
             });
         };
-        /*
-         * This is an extremely important method, this is where we introduce a new ctrl
-         */
+        /* This is an extremely important method, this is where we introduce a new ctrl */
         MainCtrl.prototype.addUser = function ($event) {
             /* keep the reference to this view model since we are going to be
              * using callback functions */
@@ -67,7 +65,8 @@ var ContactManagerApp;
                 controllerAs: 'ctrl',
                 clickOutsideToClose: true,
                 fullscreen: useFullScreen
-            }).then(function (user) {
+            })
+                .then(function (user) {
                 var newUser = ContactManagerApp.User.fromCreate(user);
                 self.users.push(newUser);
                 self.selectUser(newUser);

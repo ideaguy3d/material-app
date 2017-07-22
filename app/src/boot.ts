@@ -7,7 +7,7 @@
 // materialApp is created here
 module ContactManagerApp {
     // import JuliusSkillsCtrl = JuliusSkillsApp.JuliusSkillsCtrl;
-    angular.module("materialApp", ['ngMaterial', 'ngMdIcons', 'ngMessages'])
+    angular.module("materialApp", ['ngMaterial', 'ngMdIcons', 'ngMessages', 'ui.router'])
         .service('userService', UserService)
         .controller("mainCtrl", MainCtrl)
         .config(($mdIconProvider: angular.material.IIconProvider,
@@ -39,6 +39,15 @@ module ContactManagerApp {
             //     });
             //
             //use ".definePalette({});" for complete customization
+        })
+        .config(($stateProvider, $urlRouterProvider) => {
+            $stateProvider
+                .state('home', {
+
+                })
+                .state('admin', {
+
+                });
         });
 } // END OF: module ContactManagerApp {}
 

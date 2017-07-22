@@ -6,7 +6,7 @@
 var ContactManagerApp;
 (function (ContactManagerApp) {
     // import JuliusSkillsCtrl = JuliusSkillsApp.JuliusSkillsCtrl;
-    angular.module("materialApp", ['ngMaterial', 'ngMdIcons', 'ngMessages'])
+    angular.module("materialApp", ['ngMaterial', 'ngMdIcons', 'ngMessages', 'ui.router'])
         .service('userService', ContactManagerApp.UserService)
         .controller("mainCtrl", ContactManagerApp.MainCtrl)
         .config(function ($mdIconProvider, $mdThemingProvider) {
@@ -34,6 +34,11 @@ var ContactManagerApp;
         //     });
         //
         //use ".definePalette({});" for complete customization
+    })
+        .config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('home', {})
+            .state('admin', {});
     });
 })(ContactManagerApp || (ContactManagerApp = {})); // END OF: module ContactManagerApp {}
 var JuliusSkillsApp;
