@@ -54,15 +54,15 @@ module ContactManagerApp {
                 parent: angular.element(document.getElementById('wrapper')),
                 templateUrl: './dist/view/contactSheet.html',
                 controller: ContactPanelCtrl,
-                controllerAs: "cp",
-                bindToController: true
+                controllerAs: "cp"
             }).then((clickedItem) => {
                 //check that clickedItem is defined then log to the console
                 clickedItem && console.log(clickedItem.name + " click!");
             });
         }
 
-        /* This is an extremely important method, this is where we introduce a new ctrl */
+        /* This is an extremely important method,
+        this is where we introduce a new ctrl */
         addUser($event): void {
             /* keep the reference to this view model since we are going to be
              * using callback functions */

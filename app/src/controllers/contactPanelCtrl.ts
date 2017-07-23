@@ -12,7 +12,7 @@ module ContactManagerApp {
 
         constructor(
             private userService: IUserService,
-            private $mdBottomSheet){
+            private $mdBottomSheet ){
             this.user = userService.selectedUser;
         }
 

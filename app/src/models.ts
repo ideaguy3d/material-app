@@ -5,7 +5,6 @@
 ///<reference path="_all.ts"/>
 
 module ContactManagerApp {
-
     export class CreateUser {
         constructor(
             public firstName: string,
