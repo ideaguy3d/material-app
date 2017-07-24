@@ -34,8 +34,6 @@ function plusMinus(data) {
     console.log(precision.round(totals.pos/data.length, 6));
     console.log(precision.round(totals.neg/data.length, 6));
     console.log(precision.round(totals.zero/data.length, 6));
-
-
 }
 
 function palindrome(str) {
