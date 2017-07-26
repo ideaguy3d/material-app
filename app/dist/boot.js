@@ -37,8 +37,19 @@ var ContactManagerApp;
     })
         .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('home', {})
-            .state('admin', {});
+            .state('home', {
+            url: '/home',
+            templateUrl: '../material.html'
+        })
+            .state('skills', {
+            url: '/skills',
+            templateUrl: '../skills.html'
+        })
+            .state('css3d', {
+            url: '/css3d',
+            templateUrl: './src/css3d/prac1.html'
+        });
+        $urlRouterProvider.otherwise('home');
     });
 })(ContactManagerApp || (ContactManagerApp = {})); // END OF: module ContactManagerApp {}
 var JuliusSkillsApp;

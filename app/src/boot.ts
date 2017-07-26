@@ -43,11 +43,18 @@ module ContactManagerApp {
         .config(($stateProvider, $urlRouterProvider) => {
             $stateProvider
                 .state('home', {
-
+                    url: '/home',
+                    templateUrl: '../material.html'
                 })
-                .state('admin', {
-
+                .state('skills', {
+                    url: '/skills',
+                    templateUrl: '../skills.html'
+                })
+                .state('css3d', {
+                    url: '/css3d',
+                    templateUrl: './src/css3d/prac1.html'
                 });
+            $urlRouterProvider.otherwise('home');
         });
 } // END OF: module ContactManagerApp {}
 
