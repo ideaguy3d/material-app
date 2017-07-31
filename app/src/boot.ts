@@ -52,7 +52,11 @@ module ContactManagerApp {
                 })
                 .state('css3d', {
                     url: '/css3d',
-                    templateUrl: './src/css3d/prac1.html'
+                    templateUrl: './src/css3d/css3dp1.html'
+                })
+                .state('projects', {
+                    url: '/projects',
+                    templateUrl: './src/projects/view.projects.html'
                 });
             $urlRouterProvider.otherwise('home');
         });
