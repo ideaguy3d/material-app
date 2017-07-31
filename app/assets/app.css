@@ -146,11 +146,37 @@ section.jcube3d-container {
     perspective: 1000px;
 }
 
-.plane1 {
+section.jcube3d-container .plane1 {
+    display: inline-block;
     width: 200px;
     height: 200px;
     background: mediumvioletred;
-    transform: rotateY(90deg) translateX(100px);
+    transform: translateX(10px) rotateY(70deg);
+}
+
+section.jcube3d-container .plane2{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: mediumvioletred;
+    transform: translateX(250px) rotateY(125deg);
+}
+
+#viewport {
+    perspective: 1000px;
+}
+
+#viewport #cube {
+    transform: rotateX(0deg);
+    transform-style: preserve-3d;
+}
+
+#viewport #cube div {
+    width: 200px;
+    height: 200px;
+    opacity: 0.5;
+    position: absolute;
+    border: 1px solid #303030;
 }
 
 
