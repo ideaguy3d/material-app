@@ -82,29 +82,40 @@ span.name {
     margin: 16px 0;
 }
 
+/**
+    ------------------
+    CSS 3D Style rules
+       up to 2.3
+    ------------------
+**/
+
 .c3d-title1 {
     text-align: center;
     color: cornflowerblue;
 }
 
 div#box1 {
-    padding: 4px;
     width: 100px;
     height: 100px;
     background-color: darkred;
-    transform: perspective(500px)
-            translate3d(100px, 0, 0)
-            rotateX(40deg);
+    transform: rotateX(40deg) translateX(100px);
+    transform-origin: 100% 100%;
+    transform-style: preserve-3d;
+}
+
+#box1childElem {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    transform: rotateX(80deg);
 }
 
 div#box2 {
     padding: 4px;
     width: 100px;
     height: 100px;
-    background-color: forestgreen;
-    transform: perspective(200px)
-            translate3d(100px, -10px, 0)
-            rotateX(40deg);
+    background-color: #28272b;
+    transform: perspective(200px) translateX(100px) rotateX(40deg);
 }
 
 div.red-square {
@@ -115,13 +126,40 @@ div.red-square {
     transform: translate3d(100px, 20px, 100px) scale3d(2, .7, 3) rotate3d(0, 1, 0, 40deg);
 }
 
-section.jborder {
+section.jborder3d {
     border: solid #434343 2px;
     padding: 4px;
     perspective: 500px;
-    perspective-origin: left top;
+    perspective-origin: bottom left;
 }
 
 /**
-
+    ------------------
+    CSS 3D Style rules
+          2.4
+    ------------------
 **/
+
+section.jcube3d-container {
+    border: solid #434343 2px;
+    padding: 4px;
+    perspective: 1000px;
+}
+
+.plane1 {
+    width: 200px;
+    height: 200px;
+    background: mediumvioletred;
+    transform: rotateY(90deg) translateX(100px);
+}
+
+
+
+
+
+
+
+
+
+
+
