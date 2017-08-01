@@ -174,6 +174,7 @@ section.jcube3d-container .plane2 {
     transform-style: preserve-3d;
     width: 100%;
     height: 100%;
+    transition: all 1s;
 }
 
 #viewport #cube div {
@@ -189,7 +190,7 @@ section.jcube3d-container .plane2 {
 
 #viewport #cube #back {
     background-color: palevioletred;
-    transform: translateZ(-100px);
+    transform: translateZ(-100px) rotateY(180deg);
 }
 
 #viewport #cube #top {
@@ -197,9 +198,9 @@ section.jcube3d-container .plane2 {
     transform: translateY(-100px) rotateX(90deg);
 }
 
-#viewport #cube #top {
+#viewport #cube #bottom {
     background-color: yellowgreen;
-    transform: translateY(100px) rotateX(90deg);
+    transform: translateY(100px) rotateX(-90deg);
 }
 
 #viewport #cube #left {
@@ -211,6 +212,34 @@ section.jcube3d-container .plane2 {
     background-color: dodgerblue;
     transform: translateX(100px) rotateY(90deg);
 }
+
+#anim-link:hover + #viewport > #cube {
+    transform: rotateX(-290deg) rotateY(150deg) rotateZ(120deg)
+        translateX(400px);
+}
+
+/**
+ #anim-link:hover + #viewport > #cube {
+    animation: Rotate 5s 1;
+}
+
+@keyframes Rotate {
+    0% {
+        transform: rotateY(0deg);
+    }
+    20% {
+        transform: rotateY(30deg) rotateX(50deg);
+    }
+    70% {
+        transform: rotateY(210deg) rotateZ(120deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+**/
+
+
 
 
 
